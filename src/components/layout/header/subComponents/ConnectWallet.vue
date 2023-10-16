@@ -1,8 +1,8 @@
 <template>
     <div>
-        <PubitButton @click="isConnected && accounts ? disconnect() : connect()">
+        <pubit-button @click="isConnected && accounts ? disconnect() : connect()">
             {{ isConnected && accounts ? 'Disconnect' : 'Connect' }}
-        </PubitButton>
+        </pubit-button>
     </div>
 </template>
 

@@ -25,8 +25,13 @@
                 <PopoverPanel
                     ref="popoverRef"
                     :class="{ hidden: !popoverShow, block: popoverShow }"
-                    class="absolute -left-8 top-full z-10 mt-3 w-11 overflow-hidden rounded-3xl bg-white shadow-lg ring-1 ring-gray-900/5"
+                    class="absolute min-w-[12rem] min-h-[15rem] -right-0 top-full z-10 mt-3 overflow-hidden rounded-3xl bg-white shadow-lg ring-1 ring-gray-900/5"
                 >
+                    <disconnect-wallet />
+                    <pubit-button></pubit-button>
+                    <pubit-button></pubit-button>
+
+                    <pubit-button></pubit-button>
                 </PopoverPanel>
             </transition>
         </Popover>
@@ -35,7 +40,8 @@
 
 <script>
 import { ref } from 'vue'
-
+import DisconnectWallet from './DisconnectWallet.vue'
+import PubitButton from '@Components/common/Buttons/PubitButton.vue'
 import { Popover, PopoverButton, PopoverPanel } from '@headlessui/vue'
 import { ChevronDownIcon } from '@heroicons/vue/20/solid'
 const btnRef = ref(false)
@@ -44,6 +50,7 @@ const popoverRef = ref(false)
 
 export default {
     name: 'ProfilePopover',
+    components: { DisconnectWallet, PubitButton },
     data() {
         return {
             popoverShow: false,
