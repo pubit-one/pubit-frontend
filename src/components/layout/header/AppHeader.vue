@@ -29,8 +29,8 @@
                         <Bars3Icon class="h-6 w-6" aria-hidden="true" />
                     </button>
                 </div>
-                <profile-popover />
-                <connect-wallet class="hidden sm:flex" />
+                <profile-popover v-if="isConnected" />
+                <connect-wallet v-else class="hidden sm:flex" />
 
                 <!-- <div class="hidden lg:flex lg:flex-1 lg:justify-end">
                 <a href="#" class="text-sm font-semibold leading-6 text-gray-900"
@@ -107,6 +107,10 @@
 // import { ref } from 'vue'
 import { Dialog, DialogPanel, Disclosure, DisclosureButton, DisclosurePanel } from '@headlessui/vue'
 import ConnectWallet from './subComponents/ConnectWallet.vue'
+import { mapState, mapActions } from 'pinia'
+
+import useUserStore from '@Store/user'
+
 // import { ChevronDownIcon } from '@heroicons/vue/20/solid'
 
 // ]
@@ -118,7 +122,9 @@ export default {
         ConnectWallet,
     },
 
-    computed: {},
+    computed: {
+        ...mapState(useUserStore, ['accounts', 'isConnected']),
+    },
     methods: {},
 }
 </script>
