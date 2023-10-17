@@ -9,6 +9,7 @@
                             <img class="h-8 w-auto" src="logo" alt="Pubit" />
                         </a>
                     </div>
+                    <div class="border-l-2 border-gray-400 h-[3rem]" />
                     <div class="hidden sm:flex md:gap-x-12">
                         <a href="#" class="text-sm font-semibold leading-6 text-gray-900 whitespace-nowrap"
                             >Providers</a

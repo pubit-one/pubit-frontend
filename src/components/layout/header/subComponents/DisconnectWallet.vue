@@ -1,19 +1,19 @@
 <template>
     <div>
-        <PubitButton @click="disconnect()"> Disconnect </PubitButton>
+        <pubit-popover-button @click="disconnect()"> Disconnect </pubit-popover-button>
     </div>
 </template>
 
 <script>
 import { mapActions } from 'pinia'
-const ethers = require('ethers')
 
-// require("dotenv").config()
-import PubitButton from '@Components/common/Buttons/PubitButton.vue'
+import PubitPopoverButton from '@Components/common/Popovers/subComponents/PubitPopoverButton.vue'
 import useUserStore from '@Store/user'
 
 export default {
-    components: { PubitButton },
+    name: 'DisconnectWallet',
+
+    components: { PubitPopoverButton },
 
     mounted() {},
     methods: {

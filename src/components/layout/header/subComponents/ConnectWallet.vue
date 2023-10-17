@@ -15,6 +15,8 @@ import PubitButton from '@Components/common/Buttons/PubitButton.vue'
 import useUserStore from '@Store/user'
 
 export default {
+    name: 'ConnectWallet',
+
     components: { PubitButton },
 
     mounted() {},
