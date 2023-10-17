@@ -25,7 +25,7 @@
                 <PopoverPanel
                     ref="popoverRef"
                     :class="{ hidden: !popoverShow, block: popoverShow }"
-                    class="absolute min-w-[12rem] min-h-[15rem] -right-0 top-full z-10 mt-3 overflow-hidden rounded-3xl bg-white shadow-lg ring-1 ring-gray-900/5"
+                    class="absolute min-w-[12rem] min-h-[15rem] -right-0 top-full z-10 mt-0 overflow-hidden rounded-3xl bg-white shadow-lg ring-1 ring-gray-900/5 w-[100w-10px]"
                 >
                     <disconnect-wallet />
                     <pubit-button></pubit-button>

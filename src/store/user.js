@@ -1,25 +1,24 @@
 import { defineStore } from 'pinia'
-
+import { ethers } from 'ethers'
+import { networks } from '../utils/networksConstants.js'
 export default defineStore('user', {
     state: () => ({
-        DAIBalance: '0',
-        windEth: window.ethereum,
-        isConnected: window.ethereum.isConnected(),
-        accounts: null,
-        chainId: null,
+        DAIBalance: localStorage.getItem('DAIBalance') ? JSON.parse(localStorage.getItem('DAIBalance')) : '0',
+        isConnected: localStorage.getItem('isConnected')
+            ? JSON.parse(localStorage.getItem('isConnected'))
+            : window.ethereum.isConnected(),
+        accounts: localStorage.getItem('accounts') ? JSON.parse(localStorage.getItem('accounts')) : null,
+        chainId: localStorage.getItem('chainId') ? JSON.parse(localStorage.getItem('chainId')) : null,
     }),
     actions: {
         async connect() {
             try {
                 if (typeof window.ethereum !== 'undefined') {
-                    this.isConnected = window.ethereum.isConnected()
                     if (!this.isConnected && !this.accounts) {
                         await ethereum.request({ method: 'eth_requestAccounts' })
                         const accounts = await ethereum.request({ method: 'eth_accounts' })
-                        const chainId = await window.ethereum.request({ method: 'eth_chainId' })
                         this.isConnected = window.ethereum.isConnected()
                         this.accounts = accounts
-                        this.chainId = chainId
                     } else if (this.isConnected) {
                         const accounts = await window.ethereum
                             .request({
@@ -35,8 +34,23 @@ export default defineStore('user', {
                                     method: 'eth_requestAccounts',
                                 })
                             )
-                        this.accounts = accounts[0]
+                        this.accounts = accounts
                     }
+
+                    const chainId = await window.ethereum.request({ method: 'eth_chainId' })
+                    this.chainId = chainId
+
+                    const provider = new ethers.BrowserProvider(window.ethereum)
+                    // const signer = provider.getSigner()
+                    console.log(networks[this.chainId].DAICurrency)
+                    const contract = new ethers.Contract(
+                        networks[this.chainId].DAICurrency.contractAddress,
+                        networks[this.chainId].DAICurrency.ABI,
+                        provider
+                    )
+
+                    const DAIBalance = await contract.balanceOf(this.accounts[0])
+                    this.DAIBalance = DAIBalance
                 }
             } catch (error) {
                 console.log(error)
@@ -44,13 +58,12 @@ export default defineStore('user', {
         },
         async disconnect() {
             if (this.isConnected && this.accounts) {
-                console.log('path3')
-
                 try {
-                    window.localStorage.clear()
-                    window.location.reload(true)
                     this.accounts = null
+
                     this.chainId = null
+                    console.log(this.accounts)
+                    console.log(this.chainId)
                 } catch (error) {
                     console.log(error)
                 }

@@ -29,7 +29,7 @@
                         <Bars3Icon class="h-6 w-6" aria-hidden="true" />
                     </button>
                 </div>
-                <profile-popover v-if="isConnected" />
+                <profile-popover v-if="accounts" />
                 <connect-wallet v-else class="hidden sm:flex" />
 
                 <!-- <div class="hidden lg:flex lg:flex-1 lg:justify-end">
@@ -110,7 +110,7 @@ import ConnectWallet from './subComponents/ConnectWallet.vue'
 import { mapState, mapActions } from 'pinia'
 
 import useUserStore from '@Store/user'
-
+// import { storeToRefs } from 'pinia'
 // import { ChevronDownIcon } from '@heroicons/vue/20/solid'
 
 // ]
