@@ -27,13 +27,17 @@
                     :class="{ hidden: !popoverShow, block: popoverShow }"
                     class="absolute min-w-[14rem] -right-0 top-full z-10 mt-0 overflow-hidden rounded-xl bg-white shadow-lg ring-1 ring-gray-900/5 w-[100w-10px]"
                 >
-                    <pubit-popover-button>Profile</pubit-popover-button>
-                    <pubit-popover-button>Licenses</pubit-popover-button>
+                    <pubit-popover-button
+                        ><router-link :to="{ name: 'Profile', params: { address: accounts[0] } }"
+                            >Profile</router-link
+                        ></pubit-popover-button
+                    >
+                    <pubit-popover-button><router-link to="/">Licenses</router-link></pubit-popover-button>
                     <pubit-popover-section>
                         <disconnect-wallet />
                     </pubit-popover-section>
 
-                    <pubit-popover-button>Help Center</pubit-popover-button>
+                    <pubit-popover-button><router-link to="/">Help Center</router-link></pubit-popover-button>
                 </PopoverPanel>
             </transition>
         </Popover>
@@ -42,23 +46,39 @@
 
 <script>
 import { ref } from 'vue'
+
 import DisconnectWallet from './DisconnectWallet.vue'
 import PubitPopoverSection from '@Components/common/Popovers/subComponents/PubitPopoverSection.vue'
 import PubitPopoverButton from '@Components/common/Popovers/subComponents/PubitPopoverButton.vue'
 
 import { Popover, PopoverButton, PopoverPanel } from '@headlessui/vue'
 import { ChevronDownIcon } from '@heroicons/vue/20/solid'
+
+import { mapState } from 'pinia'
+import useUserStore from '@Store/user'
+
 const btnRef = ref(false)
 
 const popoverRef = ref(false)
 
 export default {
     name: 'ProfilePopover',
-    components: { DisconnectWallet, PubitPopoverSection, PubitPopoverButton },
+    components: {
+        DisconnectWallet,
+        PubitPopoverSection,
+        PubitPopoverButton,
+        Popover,
+        PopoverButton,
+        PopoverPanel,
+        ChevronDownIcon,
+    },
     data() {
         return {
             popoverShow: false,
         }
+    },
+    computed: {
+        ...mapState(useUserStore, ['accounts']),
     },
     methods: {
         togglePopover: function () {

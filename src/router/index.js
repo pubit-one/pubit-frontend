@@ -1,7 +1,7 @@
 import { createWebHistory, createRouter } from 'vue-router'
 import Home from '@/views/HomePage.vue'
 import Profile from '@/views/ProfilePage.vue'
-
+import CreateLicense from '@/pages/CreateLicense.vue'
 const routes = [
     {
         path: '/',
@@ -13,10 +13,19 @@ const routes = [
         name: 'Profile',
         component: Profile,
     },
+    {
+        path: '/:address/create/',
+        name: 'CreateLicense',
+        component: CreateLicense,
+    },
+    {
+        path: '/:catchAll(.*)*',
+        redirect: { name: 'Home' },
+    },
 ]
 
 const router = createRouter({
-    history: createWebHistory(),
+    history: createWebHistory(process.env.BASE_URL),
     routes,
 })
 

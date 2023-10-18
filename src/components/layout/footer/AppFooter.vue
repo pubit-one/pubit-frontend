@@ -8,41 +8,41 @@
                     <div class="sm:py-1.5">
                         <ul class="text-gray-800 font-medium">
                             <li>
-                                <a href="/#" class="hover:underline">Ecosystem</a>
+                                <router-link to="/#" class="hover:underline">Ecosystem</router-link>
                             </li>
                         </ul>
                     </div>
                     <div class="sm:py-1.5">
                         <ul class="text-black/71 font-medium">
                             <li>
-                                <a href="/#" class="hover:underline">Community</a>
+                                <router-link to="/#" class="hover:underline">Community</router-link>
                             </li>
                         </ul>
                     </div>
                     <div class="sm:py-1.5">
                         <ul class="text-black/71 font-medium">
                             <li>
-                                <a href="/#" class="hover:underline">Blog</a>
+                                <router-link to="/#" class="hover:underline">Blog</router-link>
                             </li>
                         </ul>
                     </div>
                     <div class="sm:py-1.5">
                         <ul class="text-gray-800 font-medium">
                             <li>
-                                <a href="/#" class="hover:underline">FAQ</a>
+                                <router-link to="/#" class="hover:underline">FAQ</router-link>
                             </li>
                         </ul>
                     </div>
                     <div class="sm:py-1.5">
                         <ul class="text-gray-800 font-medium">
                             <li>
-                                <a href="/#" class="hover:underline">Privacy Pokicy</a>
+                                <router-link to="/#" class="hover:underline">Privacy Pokicy</router-link>
                             </li>
                         </ul>
                     </div>
                 </div>
                 <div class="items-center flex mx-3.5 mt-4 space-x-5 sm:justify-center sm:mt-0 sm:py-3">
-                    <a href="#" class="text-gray-800 hover:text-gray-900 dark:hover:text-white">
+                    <a href="/#" class="text-gray-800 hover:text-gray-900 dark:hover:text-white">
                         <svg
                             class="w-4 h-4 md:w-6 md:h-6"
                             aria-hidden="true"
@@ -56,7 +56,7 @@
                         </svg>
                         <span class="sr-only">Discord community</span>
                     </a>
-                    <a href="#" class="text-gray-800 hover:text-gray-900 dark:hover:text-white">
+                    <a href="/#" class="text-gray-800 hover:text-gray-900 dark:hover:text-white">
                         <svg
                             class="w-4 h-4 md:w-6 md:h-6"
                             aria-hidden="true"
@@ -72,7 +72,7 @@
                         </svg>
                         <span class="sr-only">Twitter page</span>
                     </a>
-                    <a href="#" class="text-gray-800 hover:text-gray-900 dark:hover:text-white">
+                    <a href="/#" class="text-gray-800 hover:text-gray-900 dark:hover:text-white">
                         <svg
                             class="w-4 h-4 md:w-6 md:h-6"
                             aria-hidden="true"

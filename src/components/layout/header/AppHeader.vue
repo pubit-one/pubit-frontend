@@ -4,19 +4,21 @@
             <nav class="flex max-h-full w-full justify-between items-center lg:py-1.5 gap-4">
                 <div class="items-center h-full flex gap-4">
                     <div class="flex items-center justify-between w-full lg:w-auto">
-                        <a href="#" class="-m-1.5 p-1.5">
+                        <router-link :to="{ name: 'Home' }" class="-m-1.5 p-1.5">
                             <span class="sr-only">Pubit</span>
                             <img class="h-8 w-auto" src="logo" alt="Pubit" />
-                        </a>
+                        </router-link>
                     </div>
                     <div class="border-l-2 border-gray-400 h-[3rem]" />
                     <div class="hidden sm:flex md:gap-x-12">
-                        <a href="#" class="text-sm font-semibold leading-6 text-gray-900 whitespace-nowrap"
-                            >Providers</a
+                        <router-link to="/#" class="text-sm font-semibold leading-6 text-gray-900 whitespace-nowrap"
+                            >Providers</router-link
                         >
-                        <a href="#" class="text-sm font-semibold leading-6 text-gray-900 whitespace-nowrap">Docs</a>
-                        <a href="#" class="text-sm font-semibold leading-6 text-gray-900 whitespace-nowrap"
-                            >White Paper</a
+                        <router-link to="/#" class="text-sm font-semibold leading-6 text-gray-900 whitespace-nowrap"
+                            >Docs</router-link
+                        >
+                        <router-link to="/#" class="text-sm font-semibold leading-6 text-gray-900 whitespace-nowrap"
+                            >White Paper</router-link
                         >
                     </div>
                 </div>
@@ -34,8 +36,8 @@
                 <connect-wallet v-else class="hidden sm:flex" />
 
                 <!-- <div class="hidden lg:flex lg:flex-1 lg:justify-end">
-                <a href="#" class="text-sm font-semibold leading-6 text-gray-900"
-                    >Connect <span aria-hidden="true">&rarr;</span></a
+                <router-link :to="/#" class="text-sm font-semibold leading-6 text-gray-900"
+                    >Connect <span aria-hidden="true">&rarr;</span></router-link
                 >
             </div> -->
             </nav>
@@ -47,14 +49,14 @@
                 class="fixed inset-y-0 right-0 z-10 w-full overflow-y-auto bg-white px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10"
             >
                 <div class="flex items-center justify-between">
-                    <a href="#" class="-m-1.5 p-1.5">
+                    <router-link :to="{ name: 'Home' }" class="-m-1.5 p-1.5">
                         <!-- <span class="sr-only">Logo</span> -->
                         <!-- <img
                             class="h-8 w-auto"
                             src="Logo"
                             alt="Pubit"
                         /> -->
-                    </a>
+                    </router-link>
                     <button type="button" class="-m-2.5 rounded-md p-2.5 text-gray-700" @click="mobileMenuOpen = false">
                         <span class="sr-only">Close menu</span>
                         <XMarkIcon class="h-6 w-6" aria-hidden="true" />
@@ -63,27 +65,27 @@
                 <div class="mt-6 flow-root">
                     <div class="-my-6 divide-y divide-gray-500/10">
                         <div class="space-y-2 py-6">
-                            <a
-                                href="#"
+                            <router-link
+                                to="/#"
                                 class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
-                                >Providers</a
+                                >Providers</router-link
                             >
-                            <a
-                                href="#"
+                            <router-link
+                                to="/#"
                                 class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
-                                >Docs</a
+                                >Docs</router-link
                             >
-                            <a
-                                href="#"
+                            <router-link
+                                to="/#"
                                 class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
-                                >White Paper</a
+                                >White Paper</router-link
                             >
                         </div>
                         <!-- <div class="py-6">
-                            <a
-                                href="#"
+                            <router-link
+                                to="/#"
                                 class="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
-                                >Connect</a
+                                >Connect</router-link
                             >
                         </div> -->
                         <div class="py-6">
@@ -106,7 +108,11 @@
 
 <script>
 // import { ref } from 'vue'
-import { Dialog, DialogPanel, Disclosure, DisclosureButton, DisclosurePanel } from '@headlessui/vue'
+import {
+    Dialog,
+    DialogPanel,
+    //  Disclosure, DisclosureButton, DisclosurePanel
+} from '@headlessui/vue'
 import ConnectWallet from './subComponents/ConnectWallet.vue'
 import { mapState, mapActions } from 'pinia'
 

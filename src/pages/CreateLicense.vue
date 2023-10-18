@@ -1,9 +1,9 @@
 <template>
-    <h1>Profile {{ $route.params.address }}</h1>
+    <h1>CreateLicense</h1>
 </template>
 <script>
 export default {
-    name: 'ProfilePage',
+    name: 'CreateLicense',
     components: {},
     computed: {},
     created() {},
