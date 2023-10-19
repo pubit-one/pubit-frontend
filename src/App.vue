@@ -1,10 +1,10 @@
 <template>
     <app-header />
-    <div id="app-inner" class="md:w-11/12 lg:9/12 mx-auto my-auto">
+    <section id="app-inner" class="md:w-11/12 lg:9/12 mx-auto my-auto">
         <router-view v-slot="{ Component }">
             <component :is="Component"></component>
         </router-view>
-    </div>
+    </section>
     <app-footer />
 </template>
 <script>

@@ -1,7 +1,29 @@
 <template>
-    <TabGroup>
-        <TabList class="flex flex-wrap -mb-px text-sm font-medium text-center rounded-t-lg border-b-2">
-            <!-- <Tab
+    <section class="flex justify-between items-center my-12 bg-white">
+        <div class="w-1/4 p-4">
+            <h1 class="text-4xl text-gray-900 font-bold">
+                Revolutionizing licensing with transparency, security, and efficiency
+            </h1>
+        </div>
+        <div
+            class="w-3/4 rounded-lg opacity-80 relative bg-[url('../../public/template-license-poster.png')] bg-cover bg-center"
+        >
+            <img class="rounded-bl-lg" src="/template-license-poster.png" alt="Hero image" />
+            <div class="absolute top-1/2 left-1/2 text-white text-center -translate-x-1/2 -translate-y-1/2">
+                <h2 class="text-2xl font-bold">Discover a new era of licensing with our blockchain-based solution.</h2>
+                <div class="mt-5">
+                    <button class="mr-2.5 px-2.5 py-3 w-28 bg-black text-white border-none rounded-xl">Explore</button>
+                    <button class="mr-2.5 px-2.5 py-3 w-28 bg-white text-black rounded-xl border border-black">
+                        Learn more
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section>
+        <TabGroup>
+            <TabList class="flex flex-wrap -mb-px text-sm font-medium text-center rounded-t-lg border-b-2">
+                <!-- <Tab
                 class="ui-selected:bg-blue-500 ui-selected:text-white ui-not-selected:bg-white ui-not-selected:text-black"
                 >Tab 1</Tab
             >
@@ -14,157 +36,158 @@
                 >Tab 3</Tab
             > -->
 
-            <Tab
-                v-for="(content, index) in contentTypes"
-                :key="index"
-                v-slot="{ selected }"
-                as="template"
-                :disabled="content.disabled"
-                @click="setActiveContentTab(content.type)"
-            >
-                <button
-                    :class="{ 'text-sky-500': selected, 'bg-white text-black': !selected }"
-                    class="cursor-pointer inline-block p-4 border-none rounded-t-lg outline-none"
+                <Tab
+                    v-for="(content, index) in contentTypes"
+                    :key="index"
+                    v-slot="{ selected }"
+                    as="template"
+                    :disabled="content.disabled"
+                    @click="setActiveContentTab(content.type)"
                 >
-                    {{ content.type }}
-                </button>
-            </Tab>
-        </TabList>
-        <TabPanels>
-            <TabPanel>
-                <div>
-                    <div class="flex justify-between items-center mt-4 mb-8">
-                        <div class="flex space-x-2">
-                            <div class="flex items-center space-x-4 bg-slate-100 rounded-2xl p-2">
-                                <svg
-                                    class="h-6 w-6"
-                                    viewBox="0 0 24.00 24.00"
-                                    fill="none"
-                                    xmlns="http://www.w3.org/2000/svg"
-                                    stroke="#000000"
-                                    stroke-width="0.624"
-                                >
-                                    <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
-                                    <g
-                                        id="SVGRepo_tracerCarrier"
-                                        stroke-linecap="round"
-                                        stroke-linejoin="round"
-                                        stroke="#CCCCCC"
-                                        stroke-width="0.096"
-                                    ></g>
-                                    <g id="SVGRepo_iconCarrier">
-                                        <path
-                                            fill-rule="evenodd"
-                                            clip-rule="evenodd"
-                                            d="M3 7C3 6.44772 3.44772 6 4 6H20C20.5523 6 21 6.44772 21 7C21 7.55228 20.5523 8 20 8H4C3.44772 8 3 7.55228 3 7ZM6 12C6 11.4477 6.44772 11 7 11H17C17.5523 11 18 11.4477 18 12C18 12.5523 17.5523 13 17 13H7C6.44772 13 6 12.5523 6 12ZM9 17C9 16.4477 9.44772 16 10 16H14C14.5523 16 15 16.4477 15 17C15 17.5523 14.5523 18 14 18H10C9.44772 18 9 17.5523 9 17Z"
-                                            fill="#000000"
-                                        ></path>
-                                    </g>
-                                </svg>
+                    <button
+                        :class="{ 'text-sky-500': selected, 'bg-white text-black': !selected }"
+                        class="cursor-pointer inline-block p-4 border-none rounded-t-lg outline-none"
+                    >
+                        {{ content.type }}
+                    </button>
+                </Tab>
+            </TabList>
+            <TabPanels>
+                <TabPanel>
+                    <div>
+                        <div class="flex justify-between items-center mt-4 mb-8">
+                            <div class="flex space-x-2">
+                                <div class="flex items-center space-x-4 bg-slate-100 rounded-2xl p-2">
+                                    <svg
+                                        class="h-6 w-6"
+                                        viewBox="0 0 24.00 24.00"
+                                        fill="none"
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        stroke="#000000"
+                                        stroke-width="0.624"
+                                    >
+                                        <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                                        <g
+                                            id="SVGRepo_tracerCarrier"
+                                            stroke-linecap="round"
+                                            stroke-linejoin="round"
+                                            stroke="#CCCCCC"
+                                            stroke-width="0.096"
+                                        ></g>
+                                        <g id="SVGRepo_iconCarrier">
+                                            <path
+                                                fill-rule="evenodd"
+                                                clip-rule="evenodd"
+                                                d="M3 7C3 6.44772 3.44772 6 4 6H20C20.5523 6 21 6.44772 21 7C21 7.55228 20.5523 8 20 8H4C3.44772 8 3 7.55228 3 7ZM6 12C6 11.4477 6.44772 11 7 11H17C17.5523 11 18 11.4477 18 12C18 12.5523 17.5523 13 17 13H7C6.44772 13 6 12.5523 6 12ZM9 17C9 16.4477 9.44772 16 10 16H14C14.5523 16 15 16.4477 15 17C15 17.5523 14.5523 18 14 18H10C9.44772 18 9 17.5523 9 17Z"
+                                                fill="#000000"
+                                            ></path>
+                                        </g>
+                                    </svg>
+                                </div>
+                                <div class="flex items-center space-x-4 bg-slate-100 rounded-2xl px-2 py-1">
+                                    <button
+                                        v-for="(tab, index) in tabs"
+                                        :key="index"
+                                        :class="{
+                                            'bg-white': activeTab === index,
+                                            'bg-slate-100': activeTab !== index,
+                                            'text-gray-900': activeTab !== index,
+                                            'text-gray-700': activeTab === index,
+                                        }"
+                                        class="px-2 py-1 rounded-full text-sm"
+                                        @click="activeTab = index"
+                                    >
+                                        {{ tab }}
+                                    </button>
+                                </div>
                             </div>
-                            <div class="flex items-center space-x-4 bg-slate-100 rounded-2xl px-2 py-1">
-                                <button
-                                    v-for="(tab, index) in tabs"
-                                    :key="index"
-                                    :class="{
-                                        'bg-white': activeTab === index,
-                                        'bg-slate-100': activeTab !== index,
-                                        'text-gray-900': activeTab !== index,
-                                        'text-gray-700': activeTab === index,
-                                    }"
-                                    class="px-2 py-1 rounded-full text-sm"
-                                    @click="activeTab = index"
-                                >
-                                    {{ tab }}
-                                </button>
+
+                            <div class="fixed contents items-center space-x-4 bg-white rounded-full px-2 py-1">
+                                <div class="relative flex">
+                                    <Listbox v-model="selectedLicense" as="div">
+                                        <ListboxButton
+                                            class="flex relative min-w-36 w-full rounded-2xl right-1 px-5 py-2 bg-slate-100 border-slate-100 focus:outline-none sm:text-sm"
+                                        >
+                                            <span class="block truncate w-32">{{ selectedLicense }}</span>
+                                            <ChevronDownIcon class="h-5 w-5 text-gray-400" aria-hidden="true" />
+                                        </ListboxButton>
+
+                                        <transition
+                                            leave-active-class="transition duration-100 ease-in"
+                                            leave-from-class="opacity-100"
+                                            leave-to-class="opacity-0"
+                                        >
+                                            <ListboxOptions
+                                                class="absolute z-50 mt-1 w-44 max-h-60 overflow-auto rounded-md bg-slate-100 py-1 text-base shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none sm:text-sm"
+                                            >
+                                                <ListboxOption
+                                                    v-for="(license, index) in licenses"
+                                                    v-slot="{ active }"
+                                                    :key="index"
+                                                    :value="license"
+                                                >
+                                                    <li
+                                                        :class="[
+                                                            active ? 'bg-amber-100 text-amber-900' : 'text-gray-900',
+                                                            'relative cursor-default select-none py-2 px-4',
+                                                        ]"
+                                                    >
+                                                        <span :class="['block truncate']">{{ license }}</span>
+                                                    </li>
+                                                    {{ licence }}
+                                                </ListboxOption>
+                                            </ListboxOptions>
+                                        </transition>
+                                    </Listbox>
+                                    <Listbox v-model="selectedChain" as="div">
+                                        <ListboxButton
+                                            class="flex relative min-w-36 w-full rounded-2xl px-5 py-2 bg-slate-100 border-slate-100 focus:outline-none sm:text-sm"
+                                        >
+                                            <span class="block truncate w-32"> {{ selectedChain }} </span>
+
+                                            <ChevronDownIcon class="h-5 w-5 text-gray-400" aria-hidden="true" />
+                                        </ListboxButton>
+
+                                        <transition
+                                            leave-active-class="transition duration-100 ease-in"
+                                            leave-from-class="opacity-100"
+                                            leave-to-class="opacity-0"
+                                        >
+                                            <ListboxOptions
+                                                class="absolute z-50 w-44 mt-1 max-h-60 overflow-auto rounded-md bg-slate-100 py-1 text-base shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none sm:text-sm"
+                                            >
+                                                <ListboxOption
+                                                    v-for="(chain, index) in chains"
+                                                    v-slot="{ active }"
+                                                    :key="index"
+                                                    :value="chain"
+                                                >
+                                                    <li
+                                                        :class="[
+                                                            active ? 'bg-amber-100 text-amber-900' : 'text-gray-900',
+                                                            'relative cursor-default select-none py-2 px-4',
+                                                        ]"
+                                                    >
+                                                        <span :class="['block truncate']">{{ chain }}</span>
+                                                    </li>
+                                                </ListboxOption>
+                                            </ListboxOptions>
+                                        </transition>
+                                    </Listbox>
+                                </div>
                             </div>
                         </div>
+                        <div class="grid gap-5 grid-cols-1 md:grid-cols-3 lg:grid-cols-4 md:gap-14">
+                            <product-card v-for="product in filteredProducts" :key="product.id" :product="product" />
 
-                        <div class="fixed contents items-center space-x-4 bg-white rounded-full px-2 py-1">
-                            <div class="relative flex">
-                                <Listbox v-model="selectedLicense" as="div">
-                                    <ListboxButton
-                                        class="flex relative min-w-36 w-full cursor-default rounded-2xl right-1 px-5 py-2 bg-slate-100 border-slate-100 focus:outline-none sm:text-sm"
-                                    >
-                                        <span class="block truncate w-32">{{ selectedLicense }}</span>
-                                        <ChevronDownIcon class="h-5 w-5 text-gray-400" aria-hidden="true" />
-                                    </ListboxButton>
-
-                                    <transition
-                                        leave-active-class="transition duration-100 ease-in"
-                                        leave-from-class="opacity-100"
-                                        leave-to-class="opacity-0"
-                                    >
-                                        <ListboxOptions
-                                            class="absolute z-50 mt-1 w-44 max-h-60 overflow-auto rounded-md bg-slate-100 py-1 text-base shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none sm:text-sm"
-                                        >
-                                            <ListboxOption
-                                                v-for="(license, index) in licenses"
-                                                v-slot="{ active }"
-                                                :key="index"
-                                                :value="license"
-                                            >
-                                                <li
-                                                    :class="[
-                                                        active ? 'bg-amber-100 text-amber-900' : 'text-gray-900',
-                                                        'relative cursor-default select-none py-2 px-4',
-                                                    ]"
-                                                >
-                                                    <span :class="['block truncate']">{{ license }}</span>
-                                                </li>
-                                                {{ licence }}
-                                            </ListboxOption>
-                                        </ListboxOptions>
-                                    </transition>
-                                </Listbox>
-                                <Listbox v-model="selectedChain" as="div">
-                                    <ListboxButton
-                                        class="flex relative min-w-36 w-full rounded-2xl px-5 py-2 bg-slate-100 border-slate-100 focus:outline-none sm:text-sm"
-                                    >
-                                        <span class="block truncate w-32"> {{ selectedChain }} </span>
-
-                                        <ChevronDownIcon class="h-5 w-5 text-gray-400" aria-hidden="true" />
-                                    </ListboxButton>
-
-                                    <transition
-                                        leave-active-class="transition duration-100 ease-in"
-                                        leave-from-class="opacity-100"
-                                        leave-to-class="opacity-0"
-                                    >
-                                        <ListboxOptions
-                                            class="absolute z-50 w-44 mt-1 max-h-60 overflow-auto rounded-md bg-slate-100 py-1 text-base shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none sm:text-sm"
-                                        >
-                                            <ListboxOption
-                                                v-for="(chain, index) in chains"
-                                                v-slot="{ active }"
-                                                :key="index"
-                                                :value="chain"
-                                            >
-                                                <li
-                                                    :class="[
-                                                        active ? 'bg-amber-100 text-amber-900' : 'text-gray-900',
-                                                        'relative cursor-default select-none py-2 px-4',
-                                                    ]"
-                                                >
-                                                    <span :class="['block truncate']">{{ chain }}</span>
-                                                </li>
-                                            </ListboxOption>
-                                        </ListboxOptions>
-                                    </transition>
-                                </Listbox>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="grid gap-5 grid-cols-1 md:grid-cols-3 lg:grid-cols-4 md:gap-14">
-                        <product-card v-for="product in filteredProducts" :key="product.id" :product="product" />
-
-                        <ul></ul>
-                    </div></div
-            ></TabPanel>
-            <TabPanel>Content 2</TabPanel>
-            <TabPanel>Content 3</TabPanel>
-        </TabPanels>
-    </TabGroup>
+                            <ul></ul>
+                        </div></div
+                ></TabPanel>
+                <TabPanel>Content 2</TabPanel>
+                <TabPanel>Content 3</TabPanel>
+            </TabPanels>
+        </TabGroup>
+    </section>
 </template>
 <script>
 import { TabGroup, TabList, Tab, TabPanels, TabPanel } from '@headlessui/vue'
