@@ -34,28 +34,57 @@
             <TabPanel>
                 <div>
                     <div class="flex justify-between items-center mt-4 mb-8">
-                        <div class="flex items-center space-x-4 bg-slate-100 rounded-full px-2 py-1">
-                            <button
-                                v-for="(tab, index) in tabs"
-                                :key="index"
-                                :class="{
-                                    'bg-white': activeTab === index,
-                                    'bg-slate-100': activeTab !== index,
-                                    'text-gray-900': activeTab !== index,
-                                    'text-gray-700': activeTab === index,
-                                }"
-                                class="px-2 py-1 rounded-full text-sm"
-                                @click="activeTab = index"
-                            >
-                                {{ tab }}
-                            </button>
+                        <div class="flex space-x-2">
+                            <div class="flex items-center space-x-4 bg-slate-100 rounded-2xl p-2">
+                                <svg
+                                    class="h-6 w-6"
+                                    viewBox="0 0 24.00 24.00"
+                                    fill="none"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    stroke="#000000"
+                                    stroke-width="0.624"
+                                >
+                                    <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                                    <g
+                                        id="SVGRepo_tracerCarrier"
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                        stroke="#CCCCCC"
+                                        stroke-width="0.096"
+                                    ></g>
+                                    <g id="SVGRepo_iconCarrier">
+                                        <path
+                                            fill-rule="evenodd"
+                                            clip-rule="evenodd"
+                                            d="M3 7C3 6.44772 3.44772 6 4 6H20C20.5523 6 21 6.44772 21 7C21 7.55228 20.5523 8 20 8H4C3.44772 8 3 7.55228 3 7ZM6 12C6 11.4477 6.44772 11 7 11H17C17.5523 11 18 11.4477 18 12C18 12.5523 17.5523 13 17 13H7C6.44772 13 6 12.5523 6 12ZM9 17C9 16.4477 9.44772 16 10 16H14C14.5523 16 15 16.4477 15 17C15 17.5523 14.5523 18 14 18H10C9.44772 18 9 17.5523 9 17Z"
+                                            fill="#000000"
+                                        ></path>
+                                    </g>
+                                </svg>
+                            </div>
+                            <div class="flex items-center space-x-4 bg-slate-100 rounded-2xl px-2 py-1">
+                                <button
+                                    v-for="(tab, index) in tabs"
+                                    :key="index"
+                                    :class="{
+                                        'bg-white': activeTab === index,
+                                        'bg-slate-100': activeTab !== index,
+                                        'text-gray-900': activeTab !== index,
+                                        'text-gray-700': activeTab === index,
+                                    }"
+                                    class="px-2 py-1 rounded-full text-sm"
+                                    @click="activeTab = index"
+                                >
+                                    {{ tab }}
+                                </button>
+                            </div>
                         </div>
 
                         <div class="fixed contents items-center space-x-4 bg-white rounded-full px-2 py-1">
                             <div class="relative flex">
                                 <Listbox v-model="selectedLicense" as="div">
                                     <ListboxButton
-                                        class="flex relative min-w-36 w-full cursor-default rounded-full right-1 px-5 py-2 bg-slate-100 border-slate-100 focus:outline-none sm:text-sm"
+                                        class="flex relative min-w-36 w-full cursor-default rounded-2xl right-1 px-5 py-2 bg-slate-100 border-slate-100 focus:outline-none sm:text-sm"
                                     >
                                         <span class="block truncate w-32">{{ selectedLicense }}</span>
                                         <ChevronDownIcon class="h-5 w-5 text-gray-400" aria-hidden="true" />
@@ -90,7 +119,7 @@
                                 </Listbox>
                                 <Listbox v-model="selectedChain" as="div">
                                     <ListboxButton
-                                        class="flex relative min-w-36 w-full rounded-full px-5 py-2 bg-slate-100 border-slate-100 focus:outline-none sm:text-sm"
+                                        class="flex relative min-w-36 w-full rounded-2xl px-5 py-2 bg-slate-100 border-slate-100 focus:outline-none sm:text-sm"
                                     >
                                         <span class="block truncate w-32"> {{ selectedChain }} </span>
 
@@ -126,7 +155,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="grid gap-5 grid-cols-1 md:grid-cols-3 lg:grid-cols-4 md:gap-6">
+                    <div class="grid gap-5 grid-cols-1 md:grid-cols-3 lg:grid-cols-4 md:gap-14">
                         <product-card v-for="product in filteredProducts" :key="product.id" :product="product" />
 
                         <ul></ul>
