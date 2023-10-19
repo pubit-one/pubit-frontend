@@ -10,9 +10,9 @@ const pinia = createPinia()
 watch(
     pinia.state,
     (state) => {
-        console.log(JSON.stringify(state))
+        // console.log(JSON.stringify(state))
         // console.log(state)
-        console.log(JSON.stringify(pinia.state.value.user))
+        // console.log(JSON.stringify(pinia.state.value.user))
         localStorage.setItem('accounts', JSON.stringify(state.user.accounts))
         localStorage.setItem('chainId', JSON.stringify(state.user.chainId))
         localStorage.setItem('DAIBalance', JSON.stringify(state.user.DAIBalance))

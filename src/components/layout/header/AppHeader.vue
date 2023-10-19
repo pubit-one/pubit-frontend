@@ -118,7 +118,7 @@ import { mapState, mapActions } from 'pinia'
 
 import useUserStore from '@Store/user'
 // import { storeToRefs } from 'pinia'
-// import { ChevronDownIcon } from '@heroicons/vue/20/solid'
+import { Bars3Icon, XMarkIcon } from '@heroicons/vue/20/solid'
 
 // ]
 import ProfilePopover from './subComponents/ProfilePopover.vue'
@@ -127,8 +127,14 @@ export default {
     components: {
         ProfilePopover,
         ConnectWallet,
+        Dialog,
+        DialogPanel,
+        Bars3Icon,
+        XMarkIcon,
     },
-
+    data() {
+        return { mobileMenuOpen: false }
+    },
     computed: {
         ...mapState(useUserStore, ['accounts', 'isConnected']),
     },

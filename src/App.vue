@@ -1,6 +1,6 @@
 <template>
     <app-header />
-    <div id="app-inner">
+    <div id="app-inner" class="md:w-11/12 lg:9/12 mx-auto my-auto">
         <router-view v-slot="{ Component }">
             <component :is="Component"></component>
         </router-view>
@@ -25,6 +25,7 @@ export default {
 <style lang="scss">
 #app-inner {
     min-height: 75vh;
+    padding: 4rem 10rem;
 }
 #app {
     -webkit-font-smoothing: antialiased;

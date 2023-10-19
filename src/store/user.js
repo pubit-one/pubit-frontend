@@ -42,7 +42,6 @@ export default defineStore('user', {
 
                     const provider = new ethers.BrowserProvider(window.ethereum)
                     // const signer = provider.getSigner()
-                    console.log(networks[this.chainId].DAICurrency)
                     const contract = new ethers.Contract(
                         networks[this.chainId].DAICurrency.contractAddress,
                         networks[this.chainId].DAICurrency.ABI,
@@ -60,10 +59,7 @@ export default defineStore('user', {
             if (this.isConnected && this.accounts) {
                 try {
                     this.accounts = null
-
                     this.chainId = null
-                    console.log(this.accounts)
-                    console.log(this.chainId)
                 } catch (error) {
                     console.log(error)
                 }

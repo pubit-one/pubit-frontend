@@ -8,7 +8,7 @@
             >
                 0 DAI
                 <ChevronDownIcon
-                    :class="{ 'rotate-180': !popoverShow, transform: popoverShow }"
+                    :class="{ 'rotate-180': popoverShow, transform: popoverShow }"
                     class="h-5 w-5 flex-none text-gray-400"
                     aria-hidden="true"
                 />
@@ -27,17 +27,15 @@
                     :class="{ hidden: !popoverShow, block: popoverShow }"
                     class="absolute min-w-[14rem] -right-0 top-full z-10 mt-0 overflow-hidden rounded-xl bg-white shadow-lg ring-1 ring-gray-900/5 w-[100w-10px]"
                 >
-                    <pubit-popover-button
-                        ><router-link :to="{ name: 'Profile', params: { address: accounts[0] } }"
-                            >Profile</router-link
-                        ></pubit-popover-button
+                    <router-link :to="{ name: 'Profile', params: { address: accounts[0] } }"
+                        ><pubit-popover-button>Profile</pubit-popover-button></router-link
                     >
-                    <pubit-popover-button><router-link to="/">Licenses</router-link></pubit-popover-button>
+                    <router-link to="/"> <pubit-popover-button>Licenses</pubit-popover-button></router-link>
                     <pubit-popover-section>
                         <disconnect-wallet />
                     </pubit-popover-section>
 
-                    <pubit-popover-button><router-link to="/">Help Center</router-link></pubit-popover-button>
+                    <router-link to="/"><pubit-popover-button>Help Center</pubit-popover-button></router-link>
                 </PopoverPanel>
             </transition>
         </Popover>
@@ -51,7 +49,7 @@ import DisconnectWallet from './DisconnectWallet.vue'
 import PubitPopoverSection from '@Components/common/Popovers/subComponents/PubitPopoverSection.vue'
 import PubitPopoverButton from '@Components/common/Popovers/subComponents/PubitPopoverButton.vue'
 
-import { Popover, PopoverButton, PopoverPanel } from '@headlessui/vue'
+import { Popover, PopoverButton, PopoverPanel, PopoverGroup } from '@headlessui/vue'
 import { ChevronDownIcon } from '@heroicons/vue/20/solid'
 
 import { mapState } from 'pinia'
@@ -70,6 +68,7 @@ export default {
         Popover,
         PopoverButton,
         PopoverPanel,
+        PopoverGroup,
         ChevronDownIcon,
     },
     data() {
