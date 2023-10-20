@@ -1,6 +1,6 @@
 <template>
     <div
-        class="bg-white rounded-lg shadow-md overflow-hidden"
+        class="bg-white rounded-lg shadow-md overflow-hidden select-none"
         @mouseover="showBuyButton = true"
         @mouseleave="showBuyButton = false"
     >
@@ -20,7 +20,7 @@
                 </div>
             </div>
         </div>
-        <div class="relative">
+        <div v-if="buyable" class="relative">
             <button
                 :class="{ '-translate-y-10': showBuyButton }"
                 class="transition-transform ease-in-out delay-1500 absolute inset-x-0 -bottom-10 h-10 px-4 py-2 bg-green-500 text-white rounded-b-lg w-full"
@@ -29,29 +29,6 @@
             </button>
         </div>
     </div>
-    <!-- <div class="product-card" @mouseover="showBuyButton = true" @mouseleave="showBuyButton = false">
-        <div class="poster">
-            <img :src="product.poster" :alt="product.title" />
-        </div>
-
-        <div class="info">
-            <h3>{{ product.title }}</h3>
-
-            <div class="grid">
-                <div class="left">
-                    <h4>Price</h4>
-                    <span>{{ product.price }} DAI</span>
-                </div>
-
-                <div class="right">
-                    <h4>Creator</h4>
-                    <span>{{ product.creator }}</span>
-                </div>
-            </div>
-
-            <button v-if="showBuyButton" class="buy-button">Buy</button>
-        </div>
-    </div> -->
 </template>
 
 <script>
@@ -61,6 +38,10 @@ export default {
         product: {
             type: Object,
             required: true,
+        },
+        buyable: {
+            type: Boolean,
+            default: false,
         },
     },
     data() {

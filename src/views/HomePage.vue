@@ -106,10 +106,10 @@
                                 <div class="relative flex">
                                     <Listbox v-model="selectedLicense" as="div">
                                         <ListboxButton
-                                            class="flex relative min-w-36 w-full rounded-2xl right-1 px-5 py-2 bg-slate-100 border-slate-100 focus:outline-none sm:text-sm"
+                                            class="flex relative min-w-36 text-gray-900 w-full rounded-2xl right-1 px-5 py-2 bg-slate-100 border-slate-100 focus:outline-none sm:text-sm"
                                         >
                                             <span class="block truncate w-32">{{ selectedLicense }}</span>
-                                            <ChevronDownIcon class="h-5 w-5 text-gray-400" aria-hidden="true" />
+                                            <ChevronDownIcon class="h-5 w-5 text-gray-900" aria-hidden="true" />
                                         </ListboxButton>
 
                                         <transition
@@ -141,11 +141,11 @@
                                     </Listbox>
                                     <Listbox v-model="selectedChain" as="div">
                                         <ListboxButton
-                                            class="flex relative min-w-36 w-full rounded-2xl px-5 py-2 bg-slate-100 border-slate-100 focus:outline-none sm:text-sm"
+                                            class="flex relative min-w-36 w-full text-gray-900 rounded-2xl px-5 py-2 bg-slate-100 border-slate-100 focus:outline-none sm:text-sm"
                                         >
                                             <span class="block truncate w-32"> {{ selectedChain }} </span>
 
-                                            <ChevronDownIcon class="h-5 w-5 text-gray-400" aria-hidden="true" />
+                                            <ChevronDownIcon class="h-5 w-5 text-gray-900" aria-hidden="true" />
                                         </ListboxButton>
 
                                         <transition
@@ -178,7 +178,12 @@
                             </div>
                         </div>
                         <div class="grid gap-5 grid-cols-1 md:grid-cols-3 lg:grid-cols-4 md:gap-14">
-                            <product-card v-for="product in filteredProducts" :key="product.id" :product="product" />
+                            <product-card
+                                v-for="product in filteredProducts"
+                                :key="product.id"
+                                :product="product"
+                                buyable
+                            />
 
                             <ul></ul>
                         </div></div
@@ -276,7 +281,7 @@ export default {
                 //     (this.activeTab === 'mostViewed' && product.isMostViewed)
 
                 const isLicenseMatch =
-                    this.selectedLicense === 'All Licenses' || product.license === this.selectedLicense
+                    this.selectedLicense === 'All Licenses' || product.licenseType === this.selectedLicense
 
                 const isChainMatch = this.selectedChain === 'All Chains' || product.chain === this.selectedChain
 
