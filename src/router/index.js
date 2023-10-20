@@ -14,7 +14,7 @@ const routes = [
         component: Profile,
     },
     {
-        path: '/:address/create/',
+        path: '/profile/:address/create/',
         name: 'CreateLicense',
         component: CreateLicense,
     },

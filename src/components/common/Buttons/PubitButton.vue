@@ -18,7 +18,7 @@ export default {
     computed: {
         buttonClass() {
             return twMerge(
-                'px-6 py-2 font-semibold text-white bg-gray-800 rounded-md hover:opacity-95 focus:outline-none',
+                'px-6 py-2.5 select-none font-normal items-center text-white bg-gray-800 rounded-md hover:opacity-95 focus:outline-none',
                 this.btnClass
             )
         },

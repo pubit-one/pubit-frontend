@@ -32,7 +32,7 @@
     </div>
     <section>
         <TabGroup>
-            <TabList class="flex flex-wrap -mb-px text-sm font-medium text-center rounded-t-lg border-b-2">
+            <TabList class="flex flex-wrap -mb-px text-sm mt-2 font-medium text-center rounded-t-lg border-b-2">
                 <!-- <Tab
                 class="ui-selected:bg-blue-500 ui-selected:text-white ui-not-selected:bg-white ui-not-selected:text-black"
                 >Tab 1</Tab
@@ -47,18 +47,18 @@
             > -->
 
                 <Tab
-                    v-for="(content, index) in contentTypes"
+                    v-for="(tab, index) in Tabs"
                     :key="index"
                     v-slot="{ selected }"
                     as="template"
-                    :disabled="content.disabled"
-                    @click="setActiveTab(content.type)"
+                    :disabled="tab.disabled"
+                    @click="setActiveTab(tab.name)"
                 >
                     <button
-                        :class="{ 'text-sky-500': selected, 'bg-white text-black': !selected }"
+                        :class="{ 'text-green-500 font-semibold': selected, 'bg-white text-black': !selected }"
                         class="cursor-pointer inline-block p-4 border-none rounded-t-lg outline-none"
                     >
-                        {{ content.type }}
+                        {{ tab.name }}
                     </button>
                 </Tab>
             </TabList>
@@ -94,22 +94,7 @@
                                         </g>
                                     </svg>
                                 </div>
-                                <!-- <div class="flex items-center space-x-4 bg-slate-100 rounded-2xl px-2 py-1">
-                                    <button
-                                        v-for="(tab, index) in tabs"
-                                        :key="index"
-                                        :class="{
-                                            'bg-white': activeTab === index,
-                                            'bg-slate-100': activeTab !== index,
-                                            'text-gray-900': activeTab !== index,
-                                            'text-gray-700': activeTab === index,
-                                        }"
-                                        class="px-2 py-1 rounded-full text-sm"
-                                        @click="activeTab = index"
-                                    >
-                                        {{ tab }}
-                                    </button>
-                                </div> -->
+
                                 <div class="fixed contents items-center bg-white rounded-full px-2 py-1">
                                     <div class="relative flex ml-2 gap-x-2">
                                         <Listbox v-model="selectedType" as="div">
@@ -229,6 +214,27 @@
                                     </div>
                                 </div>
                             </div>
+                            <div class="fixed contents items-center space-x-4 bg-white rounded-full px-2 py-1">
+                                <div class="relative flex">
+                                    <router-link :to="{ name: 'CreateLicense', params: { address: accounts[0] } }">
+                                        <pubit-button
+                                            class="flex inset-x-0 -bottom-10 h-10 px-5 py-2.5 bg-green-500 text-white rounded-xl w-full sm:text-sm"
+                                            ><svg
+                                                xmlns="http://www.w3.org/2000/svg"
+                                                viewBox="0 0 20 20"
+                                                fill="currentColor"
+                                                class="w-5 h-5"
+                                            >
+                                                <path
+                                                    d="M10.75 4.75a.75.75 0 00-1.5 0v4.5h-4.5a.75.75 0 000 1.5h4.5v4.5a.75.75 0 001.5 0v-4.5h4.5a.75.75 0 000-1.5h-4.5v-4.5z"
+                                                />
+                                            </svg>
+
+                                            Create License</pubit-button
+                                        ></router-link
+                                    >
+                                </div>
+                            </div>
                         </div>
 
                         <div class="grid gap-5 grid-cols-1 md:grid-cols-3 lg:grid-cols-4 md:gap-14">
@@ -251,6 +257,8 @@ import useUserStore from '@Store/user'
 import { TabGroup, TabList, Tab, TabPanels, TabPanel } from '@headlessui/vue'
 import { Listbox, ListboxButton, ListboxOptions, ListboxOption } from '@headlessui/vue'
 import { ChevronDownIcon } from '@heroicons/vue/20/solid'
+
+import PubitButton from '@Components/common/Buttons/PubitButton.vue'
 import ProductCard from '@Components/common/Cards/ProductCard.vue'
 
 export default {
@@ -266,6 +274,7 @@ export default {
         ListboxOptions,
         ListboxOption,
         ProductCard,
+        PubitButton,
         ChevronDownIcon,
     },
     data() {
@@ -275,7 +284,12 @@ export default {
                 joinDatePure: '2018-04-11T12:00:00.000Z',
             },
             activeTab: 0,
-            activeContentTab: 0,
+            Tabs: [
+                { name: 'Licenses', disabled: true },
+                { name: 'Offers', disabled: true },
+                { name: 'Messages', disabled: true },
+                { name: 'Accounting', disabled: true },
+            ],
             contentTypes: [
                 { type: 'All Content Types', disabled: false },
                 { type: 'Text', disabled: false },
