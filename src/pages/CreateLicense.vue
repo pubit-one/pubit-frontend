@@ -20,7 +20,7 @@
                 </svg>
             </button>
         </div>
-        <div class="py-12 px-8 md:py-32 md:px-60">
+        <div class="py-12 px-8 md:py-24 md:px-60">
             <step-select-content-and-license-type v-if="currentStep === 1" @update-field="updateField" />
             <step-select-license-version
                 v-if="currentStep === 2"
@@ -35,21 +35,23 @@
             <step-license-specifications v-if="currentStep === 4" @update-field="updateField" />
             <step-royalty-management v-if="currentStep === 5" @update-field="updateField" />
         </div>
-        <div class="absolute bottom-20 w-full text-right">
-            <button
+        <div
+            class="fixed bg-white content-center right-0 bottom-0 shadow-[35px_35px_60px_-5px_rgba(0,0,0,0.3)] border-slate-200 w-full h-20 p-6 grid justify-end"
+        >
+            <pubit-button
                 v-if="currentStep < 4"
                 class="bg-black text-white p-10 border-none cursor-pointer"
                 @click="nextStep"
             >
                 Next
-            </button>
-            <button
+            </pubit-button>
+            <pubit-button
                 v-if="currentStep === 4"
                 class="bg-black text-white p-10 border-none cursor-pointer"
                 @click="finish"
             >
                 Finish
-            </button>
+            </pubit-button>
         </div>
     </div>
 </template>
@@ -58,11 +60,10 @@
 import StepSelectContentAndLicenseType from '@Components/pages/createLicense/StepSelectContentAndLicenseType'
 import StepSelectLicenseVersion from '@Components/pages/createLicense/StepSelectLicenseVersion'
 import StepEnterContentDetails from '@Components/pages/createLicense/StepEnterContentDetails'
-
 import StepLicenseSpecifications from '@Components/pages/createLicense/StepLicenseSpecifications'
-
 import StepRoyaltyManagement from '@Components/pages/createLicense/StepRoyaltyManagement'
 
+import PubitButton from '@Components/common/Buttons/PubitButton'
 export default {
     name: 'CreateLicense',
 
@@ -72,6 +73,7 @@ export default {
         StepLicenseSpecifications,
         StepRoyaltyManagement,
         StepSelectContentAndLicenseType,
+        PubitButton,
     },
     data() {
         return {
@@ -87,24 +89,21 @@ export default {
                 {
                     id: 1,
                     name: 'v1.0.0',
-                    image: '/images/standard-license.png',
                     features: ['Basic usage rights', 'Limited support'],
                 },
                 {
                     id: 2,
                     name: 'V2.0.0',
-                    image: '/images/extended-license.png',
                     features: ['Full usage rights', 'Priority support'],
                 },
                 {
                     id: 2,
                     name: 'V2.0.0',
-                    image: '/images/extended-license.png',
                     features: ['Full usage rights', 'Priority support'],
                 },
             ],
             formData: {
-                licenseVersion: null,
+                licenseVersion: 'v1.0.0',
                 name: null,
                 description: null,
                 file: null,

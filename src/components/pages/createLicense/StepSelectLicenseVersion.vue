@@ -26,9 +26,9 @@ export default {
     },
     emits: ['select-version'],
 
-    data() {
-        return { version: this.versions[0] }
-    },
+    // data() {
+    //     return { version: this.versions[0] }
+    // },
     methods: {
         selectVersion(version) {
             this.$emit('select-version', version)

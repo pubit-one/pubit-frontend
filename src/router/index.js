@@ -2,22 +2,40 @@ import { createWebHistory, createRouter } from 'vue-router'
 import Home from '@/views/HomePage.vue'
 import Profile from '@/views/ProfilePage.vue'
 import CreateLicense from '@/pages/CreateLicense.vue'
+import HeaderFooterConatiner from '@Components/layout/layoutContainer/HeaderFooterContainer.vue'
+import NoHeaderFooterContainer from '@Components/layout/layoutContainer/NoHeaderFooterContainer.vue'
+
 const routes = [
     {
         path: '/',
-        name: 'Home',
-        component: Home,
+        name: 'Layout',
+        component: HeaderFooterConatiner,
+        children: [
+            {
+                path: '',
+                name: 'Home',
+                component: Home,
+            },
+            {
+                path: '/profile/:address',
+                name: 'Profile',
+                component: Profile,
+            },
+        ],
     },
     {
-        path: '/profile/:address',
-        name: 'Profile',
-        component: Profile,
+        path: '/',
+        name: 'LayoutNoHeaderFooter',
+        component: NoHeaderFooterContainer,
+        children: [
+            {
+                path: '/profile/:address/create/',
+                name: 'CreateLicense',
+                component: CreateLicense,
+            },
+        ],
     },
-    {
-        path: '/profile/:address/create/',
-        name: 'CreateLicense',
-        component: CreateLicense,
-    },
+
     {
         path: '/:catchAll(.*)*',
         redirect: { name: 'Home' },
