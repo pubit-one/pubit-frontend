@@ -6,7 +6,7 @@
                     <div class="flex items-center justify-between w-full lg:w-auto">
                         <router-link :to="{ name: 'Home' }" class="-m-1.5 p-1.5">
                             <span class="sr-only">Pubit</span>
-                            <img class="h-8 w-auto" src="logo" alt="Pubit" />
+                            <img class="h-8 w-auto" src="/logo-pubit.png" alt="Pubit" />
                         </router-link>
                     </div>
                     <div class="border-l-2 border-gray-400 h-[3rem]" />
@@ -53,7 +53,7 @@
                         <!-- <span class="sr-only">Logo</span> -->
                         <!-- <img
                             class="h-8 w-auto"
-                            src="Logo"
+                            src="/logo-pubit.png"
                             alt="Pubit"
                         /> -->
                     </router-link>
