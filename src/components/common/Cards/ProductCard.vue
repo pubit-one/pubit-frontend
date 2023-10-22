@@ -1,29 +1,29 @@
 <template>
     <div
-        class="bg-white rounded-lg shadow-md overflow-hidden select-none hover:bg-pubit-light/30"
+        class="bg-white rounded-lg shadow-md overflow-hidden h-[20rem] w-[17rem] select-none hover:bg-pubit-light/30"
         @mouseover="showBuyButton = true"
         @mouseleave="showBuyButton = false"
     >
-        <div class="relative h-52 overflow-hidden">
+        <div class="relative overflow-hidden">
             <img :src="picture" :alt="product.title" class="w-full" />
         </div>
-        <div class="grid p-4 h-32">
+        <div class="grid py-4 px-6">
             <h3 class="text-base text-black font-bold mb-2">{{ product.title }}</h3>
-            <div class="flex justify-between items-center">
+            <div class="flex justify-between items-center mt-[1rem]">
                 <div>
                     <h4 class="text-sm font-medium text-gray-600">Price</h4>
-                    <p class="text-sm font-semibold text-gray-900">{{ product.price }} DAI</p>
+                    <p class="text-sm font-semibold text-gray-900 mt-[0.725rem]">{{ product.price }} DAI</p>
                 </div>
                 <div>
                     <h4 class="text-sm font-medium text-gray-600">Creator</h4>
-                    <p class="text-sm font-semibold text-gray-900">{{ product.creator }}</p>
+                    <p class="text-sm font-semibold text-gray-900 mt-[0.725rem]">{{ product.creator }}</p>
                 </div>
             </div>
         </div>
-        <div v-if="buyable" class="relative">
+        <div v-if="buyable" class="w-[inherit]">
             <button
                 :class="{ '-translate-y-10': showBuyButton }"
-                class="transition-transform ease-in-out delay-1500 absolute inset-x-0 -bottom-10 h-10 px-4 py-2 bg-pubit-heavy text-white rounded-b-lg w-full"
+                class="relative transition-transform ease-in-out delay-1500 inset-x-0 bottom-0 h-10 px-4 py-2 bg-pubit-heavy text-white rounded-b-lg w-full"
             >
                 Buy
             </button>

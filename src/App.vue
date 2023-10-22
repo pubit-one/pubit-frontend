@@ -21,7 +21,7 @@ export default {
 <style lang="scss">
 #app-inner {
     min-height: 75vh;
-    padding: 4rem 10rem;
+    // padding: 4rem 10rem;
 }
 #app {
     -webkit-font-smoothing: antialiased;

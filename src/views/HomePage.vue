@@ -1,7 +1,7 @@
 <template>
     <section class="flex justify-between items-center my-12 bg-white">
         <div class="w-1/2">
-            <h1 class="text-3xl text-pubit-dark font-bold capitalize">
+            <h1 class="text-4xl text-pubit-dark font-bold capitalize leading-relaxed">
                 Revolutionizing licensing with transparency, security, and efficiency
             </h1>
             <h2 class="text-xl font-normal text-pubit-heavy capitalize pr-20 mt-4">
@@ -18,9 +18,6 @@
         </div>
         <div class="w-1/2 relative bg-cover bg-center flex justify-end h-[22rem]">
             <img class="rounded-bl-lg" src="/hero-section-light.svg" alt="Hero image" />
-            <div class="absolute top-1/2 left-1/2 text-white text-center -translate-x-1/2 -translate-y-1/2">
-                <div class="mt-5"></div>
-            </div>
         </div>
     </section>
     <section>
@@ -167,7 +164,9 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="grid gap-5 grid-cols-1 md:grid-cols-3 md:gap-14 lg:grid-cols-4 lg:gap-6">
+                        <div
+                            class="grid gap-5 grid-cols-[repeat(auto-fill,minmax(16rem,_1fr))] justify-items-center md:gap-14 lg:gap-6"
+                        >
                             <product-card
                                 v-for="product in filteredProducts"
                                 :key="product.id"
@@ -433,7 +432,10 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="grid gap-5 grid-cols-1 md:grid-cols-3 md:gap-14 lg:grid-cols-4 lg:gap-6">
+                        <div
+                            id="card-container"
+                            class="grid gap-5 grid-cols-[auto-fill_minmax(320px,_1fr)_100px] md:gap-14 lg:gap-6"
+                        >
                             <product-card
                                 v-for="product in filteredProducts"
                                 :key="product.id"

@@ -1,6 +1,6 @@
 <template>
     <header class="bg-white">
-        <div class="mx-auto md:w-11/12 lg:w-9/12 flex max-w-[2560px] px-4 sm:px md:px-20 lg:px-40" aria-label="Global">
+        <div class="md:w-11/12 lg:w-11/12 xl:w-8/12 max-w-[2560px] mx-auto my-auto px-4 flex" aria-label="Global">
             <nav class="flex max-h-full w-full justify-between items-center lg:py-1.5 gap-4">
                 <div class="items-center h-full flex gap-4">
                     <div class="flex items-center justify-between w-full lg:w-auto">
@@ -9,7 +9,7 @@
                             <img class="h-8 w-auto" src="/logo-pubit.svg" alt="Pubit" />
                         </router-link>
                     </div>
-                    <div class="border-l-2 border-gray-400 h-[3rem]" />
+                    <div class="border-l-2 border-gray-400 h-[2.5rem] mx-4" />
                     <div class="hidden sm:flex md:gap-x-12">
                         <router-link to="/#" class="text-sm font-semibold leading-6 text-pubit-dark whitespace-nowrap"
                             >Providers</router-link
@@ -32,8 +32,21 @@
                         <Bars3Icon class="h-6 w-6" aria-hidden="true" />
                     </button>
                 </div>
-                <profile-popover v-if="accounts" />
-                <connect-wallet v-else class="hidden sm:flex" />
+                <div class="flex gap-4">
+                    <button
+                        type="button"
+                        class="flex items-center justify-around font-semibold px-4 w-[8rem] text-gray-900 bg-gray-200 rounded-2xl"
+                    >
+                        <svg class="h-6 w-6" viewBox="0 0 32 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M30 25V26.6667C30 28.5 28.5 30 26.6667 30H3.33333C1.48333 30 0 28.5 0 26.6667V3.33333C0 1.5 1.48333 0 3.33333 0H26.6667C28.5 0 30 1.5 30 3.33333V5H15C13.15 5 11.6667 6.5 11.6667 8.33333V21.6667C11.6667 23.5 13.15 25 15 25H30ZM15 21.6667H31.6667V8.33333H15V21.6667ZM21.6667 17.5C20.2833 17.5 19.1667 16.3833 19.1667 15C19.1667 13.6167 20.2833 12.5 21.6667 12.5C23.05 12.5 24.1667 13.6167 24.1667 15C24.1667 16.3833 23.05 17.5 21.6667 17.5Z"
+                                fill="black"
+                            />
+                        </svg>
+                        {{ DAIBalance }} DAI
+                    </button>
+                    <profile-popover v-if="accounts" /> <connect-wallet v-else class="hidden sm:flex" />
+                </div>
             </nav>
         </div>
 
@@ -126,7 +139,7 @@ export default {
         return { mobileMenuOpen: false }
     },
     computed: {
-        ...mapState(useUserStore, ['accounts', 'isConnected']),
+        ...mapState(useUserStore, ['accounts', 'isConnected', 'DAIBalance']),
     },
     methods: {},
 }
