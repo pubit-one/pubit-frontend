@@ -11,13 +11,19 @@
                     </div>
                     <div class="border-l-2 border-gray-400 h-[2.5rem] mx-4" />
                     <div class="hidden sm:flex md:gap-x-12">
-                        <router-link to="/#" class="text-sm font-semibold leading-6 text-pubit-dark whitespace-nowrap"
+                        <router-link
+                            to="/under-construction"
+                            class="text-sm font-semibold leading-6 text-pubit-dark whitespace-nowrap"
                             >Providers</router-link
                         >
-                        <router-link to="/#" class="text-sm font-semibold leading-6 text-pubit-dark whitespace-nowrap"
+                        <router-link
+                            to="/under-construction"
+                            class="text-sm font-semibold leading-6 text-pubit-dark whitespace-nowrap"
                             >Docs</router-link
                         >
-                        <router-link to="/#" class="text-sm font-semibold leading-6 text-pubit-dark whitespace-nowrap"
+                        <router-link
+                            to="/under-construction"
+                            class="text-sm font-semibold leading-6 text-pubit-dark whitespace-nowrap"
                             >White Paper</router-link
                         >
                     </div>
@@ -34,6 +40,7 @@
                 </div>
                 <div class="flex gap-4">
                     <button
+                        v-if="accounts"
                         type="button"
                         class="flex items-center justify-around font-semibold px-4 w-[8rem] text-gray-900 bg-gray-200 rounded-2xl"
                     >
@@ -69,24 +76,24 @@
                     <div class="-my-6 divide-y divide-gray-500/10">
                         <div class="space-y-2 py-6">
                             <router-link
-                                to="/#"
+                                to="/under-construction"
                                 class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
                                 >Providers</router-link
                             >
                             <router-link
-                                to="/#"
+                                to="/under-construction"
                                 class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
                                 >Docs</router-link
                             >
                             <router-link
-                                to="/#"
+                                to="/under-construction"
                                 class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
                                 >White Paper</router-link
                             >
                         </div>
                         <!-- <div class="py-6">
                             <router-link
-                                to="/#"
+                                to="/under-construction"
                                 class="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
                                 >Connect</router-link
                             >

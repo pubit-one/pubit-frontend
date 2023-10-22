@@ -1,6 +1,7 @@
 import { createWebHistory, createRouter } from 'vue-router'
 import Home from '@/views/HomePage.vue'
 import Profile from '@/views/ProfilePage.vue'
+import UnderConstruction from '@/views/UnderConstruction.vue'
 import CreateLicense from '@/pages/CreateLicense.vue'
 import HeaderFooterConatiner from '@Components/layout/layoutContainer/HeaderFooterContainer.vue'
 import NoHeaderFooterContainer from '@Components/layout/layoutContainer/NoHeaderFooterContainer.vue'
@@ -20,6 +21,11 @@ const routes = [
                 path: '/profile/:address',
                 name: 'Profile',
                 component: Profile,
+            },
+            {
+                path: '/under-construction',
+                name: 'UnderConstruction',
+                component: UnderConstruction,
             },
         ],
     },

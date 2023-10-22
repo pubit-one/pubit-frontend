@@ -15,28 +15,30 @@
                     <div class="sm:py-1.5">
                         <ul class="text-black/71 font-medium">
                             <li>
-                                <router-link to="/#" class="hover:underline">Community</router-link>
+                                <router-link to="/under-construction" class="hover:underline">Community</router-link>
                             </li>
                         </ul>
                     </div>
                     <div class="sm:py-1.5">
                         <ul class="text-black/71 font-medium">
                             <li>
-                                <router-link to="/#" class="hover:underline">Blog</router-link>
+                                <router-link to="/under-construction" class="hover:underline">Blog</router-link>
                             </li>
                         </ul>
                     </div>
                     <div class="sm:py-1.5">
                         <ul class="text-gray-800 font-medium">
                             <li>
-                                <router-link to="/#" class="hover:underline">FAQ</router-link>
+                                <router-link to="/under-construction" class="hover:underline">FAQ</router-link>
                             </li>
                         </ul>
                     </div>
                     <div class="sm:py-1.5">
                         <ul class="text-gray-800 font-medium">
                             <li>
-                                <router-link to="/#" class="hover:underline">Privacy Pokicy</router-link>
+                                <router-link to="/under-construction" class="hover:underline"
+                                    >Privacy Pokicy</router-link
+                                >
                             </li>
                         </ul>
                     </div>

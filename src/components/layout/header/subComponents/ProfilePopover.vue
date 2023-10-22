@@ -31,12 +31,16 @@
                     <router-link :to="{ name: 'Profile', params: { address: accounts[0] } }"
                         ><pubit-popover-button>Profile</pubit-popover-button></router-link
                     >
-                    <router-link to="/"> <pubit-popover-button>Licenses</pubit-popover-button></router-link>
+                    <router-link to="/under-construction">
+                        <pubit-popover-button>Licenses</pubit-popover-button></router-link
+                    >
                     <pubit-popover-section>
                         <disconnect-wallet />
                     </pubit-popover-section>
 
-                    <router-link to="/"><pubit-popover-button>Help Center</pubit-popover-button></router-link>
+                    <router-link to="/under-construction"
+                        ><pubit-popover-button>Help Center</pubit-popover-button></router-link
+                    >
                 </PopoverPanel>
             </transition>
         </Popover>
