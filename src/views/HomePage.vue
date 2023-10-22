@@ -495,7 +495,7 @@ export default {
             products: [
                 {
                     id: 1,
-                    title: 'Contractual Obligations',
+                    title: 'The Sound Of Science',
                     poster: '/contractual-obligations1.png',
                     price: 12,
                     creator: 'Pearson',
@@ -522,7 +522,7 @@ export default {
                 },
                 {
                     id: 3,
-                    title: 'Contractual Obligations',
+                    title: 'Hit The Road',
                     poster: '/contractual-obligations3.png',
                     price: 12,
                     creator: 'Pearson',

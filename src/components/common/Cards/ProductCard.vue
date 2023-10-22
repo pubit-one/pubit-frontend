@@ -1,6 +1,6 @@
 <template>
     <div
-        class="bg-white rounded-lg shadow-md overflow-hidden h-[20rem] w-[17rem] select-none hover:bg-pubit-light/30"
+        class="bg-white rounded-lg shadow-md overflow-hidden h-[20rem] w-[17rem] select-none hover:bg-pubit-light/30 transition-transform ease-in-out delay-1500 hover:scale-105"
         @mouseover="showBuyButton = true"
         @mouseleave="showBuyButton = false"
     >

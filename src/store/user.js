@@ -6,7 +6,9 @@ export default defineStore('user', {
         DAIBalance: localStorage.getItem('DAIBalance') ? JSON.parse(localStorage.getItem('DAIBalance')) : '0',
         isConnected: localStorage.getItem('isConnected')
             ? JSON.parse(localStorage.getItem('isConnected'))
-            : window.ethereum.isConnected(),
+            : window.ethereum && window.ethereum.isConnected()
+            ? window.ethereum.isConnected()
+            : false,
         accounts: localStorage.getItem('accounts') ? JSON.parse(localStorage.getItem('accounts')) : null,
         chainId: localStorage.getItem('chainId') ? JSON.parse(localStorage.getItem('chainId')) : null,
     }),
