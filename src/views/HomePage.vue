@@ -184,8 +184,6 @@
                                 :product="product"
                                 buyable
                             />
-
-                            <ul></ul>
                         </div></div
                 ></TabPanel>
                 <TabPanel>Content 2</TabPanel>

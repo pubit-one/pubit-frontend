@@ -11,7 +11,7 @@
                     :label="'Content Type'"
                     :list="contentTypes"
                     :key-value="'type'"
-                    :defualt-value="'text'"
+                    :defualt-value="selectedContentType"
                     @on-change="updateField('selectedContentType', $event.target.value)"
                 />
                 <pubit-select-list
@@ -19,7 +19,7 @@
                     :label="'License Type'"
                     :list="licenseTypes"
                     :key-value="'type'"
-                    :defualt-value="'text'"
+                    :defualt-value="selectedLicenseType"
                     @on-change="updateField('selectedLicenseType', $event.target.value)"
                 />
             </div>

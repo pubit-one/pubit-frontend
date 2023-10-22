@@ -25,6 +25,7 @@
             <step-select-license-version
                 v-if="currentStep === 2"
                 :versions="versions"
+                :license-version="getLicenseVersion"
                 @select-version="selectVersion"
             />
             <step-enter-content-details
@@ -97,8 +98,8 @@ export default {
                     features: ['Full usage rights', 'Priority support'],
                 },
                 {
-                    id: 2,
-                    name: 'V2.0.0',
+                    id: 3,
+                    name: 'V3.0.0',
                     features: ['Full usage rights', 'Priority support'],
                 },
             ],
@@ -114,6 +115,11 @@ export default {
                 buyerShare: null,
             },
         }
+    },
+    computed: {
+        getLicenseVersion() {
+            return this.formData.licenseVersion
+        },
     },
     methods: {
         nextStep() {
