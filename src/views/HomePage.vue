@@ -1,41 +1,31 @@
 <template>
     <section class="flex justify-between items-center my-12 bg-white">
-        <div class="w-1/4 p-4">
-            <h1 class="text-4xl text-gray-900 font-bold">
+        <div class="w-1/2 p-4">
+            <h1 class="text-3xl text-pubit-dark font-bold capitalize">
                 Revolutionizing licensing with transparency, security, and efficiency
             </h1>
+            <h2 class="text-xl font-normal text-pubit-heavy capitalize pr-20 mt-4">
+                Discover a new era of licensing with our blockchain-based solution.
+            </h2>
+            <div class="mt-14">
+                <button class="mr-2.5 px-2.5 py-3 w-32 bg-pubit-heavy text-white border-none rounded-2xl">
+                    Let's Start
+                </button>
+                <button class="mr-2.5 px-2.5 py-3 w-32 bg-white text-pubit-dark rounded-xl border-0">
+                    See License
+                </button>
+            </div>
         </div>
-        <div
-            class="w-3/4 rounded-lg opacity-80 relative bg-[url('../../public/template-license-poster.png')] bg-cover bg-center"
-        >
-            <img class="rounded-bl-lg" src="/template-license-poster.png" alt="Hero image" />
+        <div class="w-1/2 relative bg-cover bg-center flex justify-end h-[22rem]">
+            <img class="rounded-bl-lg" src="/hero-section-light.svg" alt="Hero image" />
             <div class="absolute top-1/2 left-1/2 text-white text-center -translate-x-1/2 -translate-y-1/2">
-                <h2 class="text-2xl font-bold">Discover a new era of licensing with our blockchain-based solution.</h2>
-                <div class="mt-5">
-                    <button class="mr-2.5 px-2.5 py-3 w-28 bg-black text-white border-none rounded-xl">Explore</button>
-                    <button class="mr-2.5 px-2.5 py-3 w-28 bg-white text-black rounded-xl border border-black">
-                        Learn more
-                    </button>
-                </div>
+                <div class="mt-5"></div>
             </div>
         </div>
     </section>
     <section>
         <TabGroup>
             <TabList class="flex flex-wrap -mb-px text-sm font-medium text-center rounded-t-lg border-b-2">
-                <!-- <Tab
-                class="ui-selected:bg-blue-500 ui-selected:text-white ui-not-selected:bg-white ui-not-selected:text-black"
-                >Tab 1</Tab
-            >
-            <Tab
-                class="ui-selected:bg-blue-500 ui-selected:text-white ui-not-selected:bg-white ui-not-selected:text-black"
-                >Tab 2</Tab
-            >
-            <Tab
-                class="ui-selected:bg-blue-500 ui-selected:text-white ui-not-selected:bg-white ui-not-selected:text-black"
-                >Tab 3</Tab
-            > -->
-
                 <Tab
                     v-for="(content, index) in contentTypes"
                     :key="index"
