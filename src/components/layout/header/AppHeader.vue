@@ -1,6 +1,6 @@
 <template>
     <header class="bg-white">
-        <div class="mx-auto w-full flex max-w-[2560px] px-4 sm:px-8 xxl:px-16" aria-label="Global">
+        <div class="mx-auto md:w-11/12 lg:w-9/12 flex max-w-[2560px] px-4 sm:px md:px-20 lg:px-40" aria-label="Global">
             <nav class="flex max-h-full w-full justify-between items-center lg:py-1.5 gap-4">
                 <div class="items-center h-full flex gap-4">
                     <div class="flex items-center justify-between w-full lg:w-auto">

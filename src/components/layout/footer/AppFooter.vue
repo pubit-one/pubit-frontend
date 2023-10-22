@@ -1,8 +1,8 @@
 <template>
     <footer class="bg-white">
-        <div class="mx-auto w-full flex max-w-[2560px] p-4 py-6 lg:py-8">
+        <div class="mx-auto md:w-11/12 lg:w-9/12 flex max-w-[2560px] p-4 py-6 lg:py-8 md:px-20 lg:px-36">
             <div
-                class="flex max-h-full w-full justify-between items-center sm:place-content-center sm:inline-grid lg:mx-32 md:mx-16 text-center md:flex md:justify-between"
+                class="flex max-h-full w-full justify-between items-center sm:place-content-center sm:inline-grid text-center md:flex md:justify-between"
             >
                 <div class="grid items-center grid-cols-1 gap-8 max-md:table-footer-group sm:gap-2 sm:grid-cols-5">
                     <div class="sm:py-1.5">
