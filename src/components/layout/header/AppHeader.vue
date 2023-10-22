@@ -6,18 +6,18 @@
                     <div class="flex items-center justify-between w-full lg:w-auto">
                         <router-link :to="{ name: 'Home' }" class="-m-1.5 p-1.5">
                             <span class="sr-only">Pubit</span>
-                            <img class="h-8 w-auto" src="/logo-pubit.png" alt="Pubit" />
+                            <img class="h-8 w-auto" src="/logo-pubit.svg" alt="Pubit" />
                         </router-link>
                     </div>
                     <div class="border-l-2 border-gray-400 h-[3rem]" />
                     <div class="hidden sm:flex md:gap-x-12">
-                        <router-link to="/#" class="text-sm font-semibold leading-6 text-gray-900 whitespace-nowrap"
+                        <router-link to="/#" class="text-sm font-semibold leading-6 text-pubit-dark whitespace-nowrap"
                             >Providers</router-link
                         >
-                        <router-link to="/#" class="text-sm font-semibold leading-6 text-gray-900 whitespace-nowrap"
+                        <router-link to="/#" class="text-sm font-semibold leading-6 text-pubit-dark whitespace-nowrap"
                             >Docs</router-link
                         >
-                        <router-link to="/#" class="text-sm font-semibold leading-6 text-gray-900 whitespace-nowrap"
+                        <router-link to="/#" class="text-sm font-semibold leading-6 text-pubit-dark whitespace-nowrap"
                             >White Paper</router-link
                         >
                     </div>
@@ -34,12 +34,6 @@
                 </div>
                 <profile-popover v-if="accounts" />
                 <connect-wallet v-else class="hidden sm:flex" />
-
-                <!-- <div class="hidden lg:flex lg:flex-1 lg:justify-end">
-                <router-link :to="/#" class="text-sm font-semibold leading-6 text-gray-900"
-                    >Connect <span aria-hidden="true">&rarr;</span></router-link
-                >
-            </div> -->
             </nav>
         </div>
 
@@ -50,12 +44,8 @@
             >
                 <div class="flex items-center justify-between">
                     <router-link :to="{ name: 'Home' }" class="-m-1.5 p-1.5">
-                        <!-- <span class="sr-only">Logo</span> -->
-                        <!-- <img
-                            class="h-8 w-auto"
-                            src="/logo-pubit.png"
-                            alt="Pubit"
-                        /> -->
+                        <span class="sr-only">Pubit</span>
+                        <img class="h-8 w-auto" src="/logo-pubit.svg" alt="Pubit" />
                     </router-link>
                     <button type="button" class="-m-2.5 rounded-md p-2.5 text-gray-700" @click="mobileMenuOpen = false">
                         <span class="sr-only">Close menu</span>

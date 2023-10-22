@@ -16,7 +16,7 @@ watch(
         // console.log(JSON.stringify(pinia.state.value.user))
         localStorage.setItem('accounts', JSON.stringify(state.user.accounts))
         localStorage.setItem('chainId', JSON.stringify(state.user.chainId))
-        localStorage.setItem('DAIBalance', JSON.stringify(state.user.DAIBalance))
+        localStorage.setItem('DAIBalance', state.user.DAIBalance)
         localStorage.setItem('isConnected', JSON.stringify(state.user.isConnected))
     },
     { deep: true }

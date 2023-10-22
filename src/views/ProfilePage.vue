@@ -3,13 +3,13 @@
         <div class="flex flex-col">
             <div class="w-full h-72 right-0 left-0 grid grid-cols-1 items-center justify-between">
                 <img
-                    src="/template-license-poster.png"
+                    src="/contractual-obligations2.png"
                     alt="Timeline picture"
                     class="absolute w-full h-72 object-cover left-0"
                 />
                 <div class="flex items-center">
                     <img
-                        src="/template-license-poster.png"
+                        src="/contractual-obligations2.png"
                         alt="Profile picture"
                         class="h-24 w-24 rounded-full relative left-0 top-32"
                     />

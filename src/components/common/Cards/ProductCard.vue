@@ -1,6 +1,6 @@
 <template>
     <div
-        class="bg-white rounded-lg shadow-md overflow-hidden select-none"
+        class="bg-white rounded-lg shadow-md overflow-hidden select-none hover:bg-pubit-light/30"
         @mouseover="showBuyButton = true"
         @mouseleave="showBuyButton = false"
     >
@@ -23,7 +23,7 @@
         <div v-if="buyable" class="relative">
             <button
                 :class="{ '-translate-y-10': showBuyButton }"
-                class="transition-transform ease-in-out delay-1500 absolute inset-x-0 -bottom-10 h-10 px-4 py-2 bg-green-500 text-white rounded-b-lg w-full"
+                class="transition-transform ease-in-out delay-1500 absolute inset-x-0 -bottom-10 h-10 px-4 py-2 bg-pubit-heavy text-white rounded-b-lg w-full"
             >
                 Buy
             </button>
@@ -51,7 +51,7 @@ export default {
     },
     computed: {
         picture() {
-            return this.product.picture ? this.product.picture : '/template-license-poster.png'
+            return this.product.poster ? this.product.poster : '/contractual-obligations2.png'
         },
     },
 }

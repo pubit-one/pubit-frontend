@@ -1,6 +1,6 @@
 <template>
     <div>
-        <pubit-button @click="connect()"> Connect </pubit-button>
+        <pubit-button :btn-class="'bg-pubit-dark rounded-2xl'" @click="connect()"> Connect </pubit-button>
     </div>
 </template>
 

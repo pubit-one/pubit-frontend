@@ -6,7 +6,7 @@ module.exports = {
     theme: {
         extend: {
             backgroundImage: {
-                'hero-poster': "url('../public/template-license-poster.svg')",
+                'hero-poster': "url('../public/contractual-obligations2.png')",
             },
             colors: {
                 transparent: 'transparent',
