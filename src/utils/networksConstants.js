@@ -1,3 +1,5 @@
+import { DAI_ABI } from '../utils/tokenContracts.js'
+
 export const networks = {
     '0x1': {
         name: 'Ethereum Mainnet',
@@ -28,7 +30,7 @@ export const networks = {
         },
         DAICurrency: {
             contractAddress: '0x3e622317f8C93f7328350cF0B56d9eD4C620C5d6',
-            ABI: process.env.VUE_APP_DAI_ABI,
+            ABI: DAI_ABI,
         },
         rpcUrls: ['wss://ethereum-sepolia.publicnode.com'],
     },

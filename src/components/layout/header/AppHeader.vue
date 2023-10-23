@@ -52,7 +52,8 @@
                         </svg>
                         {{ DAIBalance }} DAI
                     </button>
-                    <profile-popover v-if="accounts" /> <connect-wallet v-else class="hidden sm:flex" />
+                    <profile-popover v-if="accounts" />
+                    <connect-wallet v-else class="hidden sm:flex" />
                 </div>
             </nav>
         </div>
