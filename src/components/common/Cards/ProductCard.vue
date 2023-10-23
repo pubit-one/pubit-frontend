@@ -4,7 +4,7 @@
         @mouseover="showBuyButton = true"
         @mouseleave="showBuyButton = false"
     >
-        <div class="relative overflow-hidden">
+        <div class="relative overflow-hidden h-[11.8rem]">
             <img :src="picture" :alt="product.title" class="w-full" />
         </div>
         <div class="grid py-4 px-6">
