@@ -1,6 +1,25 @@
-## pubit-frontend
+## Pubit Frontend
 
-This is the frontend repository for the Pubit project, developed by the Pubit-One organization. Pubit is a decentralized publishing platform built on the Ethereum blockchain. The frontend is built using Vue.js, a popular JavaScript framework for building user interfaces.
+Pubit is a revolutionary Blockchain-Based Licensing Decentralized Application (DApp) that aims to transform the licensing industry by introducing transparency, security, and efficiency. Leveraging blockchain technology, smart contracts, and a decentralized marketplace, Pubit addresses the challenges associated with traditional licensing processes, benefiting creators, businesses, and consumers alike.
+The frontend is built using Vue.js, a popular JavaScript framework for building user interfaces.
+
+### Features
+
+The Pubit frontend repository contains the following features:
+
+-   **Decentralized Licensing**: Users can license their intellectual property directly to businesses and consumers through the Ethereum blockchain. This process ensures transparency, security, and immutability of the licensing agreements[1][3].
+
+-   **User-Friendly Interface**: The Vue.js framework allows for the creation of a responsive and intuitive user interface, making it easy for creators to manage their licenses and for businesses and consumers to search for and acquire licenses for various types of content.
+
+-   **Smart Contract Integration**: Smart contracts are used to automate the licensing process, ensuring that the terms and conditions of the agreements are self-executing and tamper-proof.
+
+-   **Content Discovery**: Users can browse and search for content published on the platform, making it easy to discover new and interesting works.
+
+-   **Secure Wallet Integration**: Pubit supports various Ethereum wallets, allowing users to securely manage their funds and interact with the platform.
+
+-   **Secure Payment System**: Pubit's integration with blockchain technology enables secure and transparent royalty payments for creators, eliminating the need for intermediaries and reducing payment delays.
+
+-   **Simplified Licensing Process**: By using blockchain technology, Pubit simplifies the licensing process, making it more efficient for both creators and licensees.
 
 ### Project Setup
 
@@ -35,20 +54,6 @@ npm run build
 ```shell
 npm run lint
 ```
-
-### Features
-
-The Pubit frontend repository contains the following features:
-
--   **Decentralized Publishing**: Users can publish their content on the Ethereum blockchain, ensuring transparency and immutability.
-
--   **User-Friendly Interface**: The Vue.js framework allows for the creation of a responsive and intuitive user interface, making it easy for users to navigate and interact with the platform.
-
--   **Integration with Smart Contracts**: The frontend communicates with the Pubit smart contracts, enabling users to interact with the blockchain and perform various actions, such as publishing, purchasing, and reviewing content.
-
--   **Content Discovery**: Users can browse and search for content published on the platform, making it easy to discover new and interesting works.
-
--   **Secure Wallet Integration**: Pubit supports various Ethereum wallets, allowing users to securely manage their funds and interact with the platform.
 
 ### Contribution Guidelines
 
